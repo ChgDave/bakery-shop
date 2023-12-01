@@ -1,6 +1,7 @@
 import "../App.css";
 import priceConversion from "../../util/helpers";
 import { useState } from "react";
+import { Button } from "antd";
 
 function BakeryItem({ data, addToFav }) {
   const [buttonText, setButtonText] = useState("Add to Favorites");
@@ -17,14 +18,15 @@ function BakeryItem({ data, addToFav }) {
       <img src={data.img}></img>
       <h4>{data.name}</h4>
       <p>{priceConversion(data.cost)}</p>
-      <button
+      <Button
+        type="primary"
         onClick={() => {
           addToFav(data.name);
           buttonState();
         }}
       >
         {buttonText}
-      </button>
+      </Button>
     </div>
   );
 }

@@ -35,7 +35,7 @@
 
 .card {
   /* height: 100px; */
-  width: 100px;
+  width: 170px;
   display: flex;
   flex-direction: column;
   padding: 2em;
