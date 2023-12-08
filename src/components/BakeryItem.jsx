@@ -23,6 +23,7 @@ function BakeryItem({ data, addToFav, addToCart }) {
 
   const handleCartClick = () => {
     addToCart(data);
+    setCartLocal();
   };
 
   const backgroundColor =

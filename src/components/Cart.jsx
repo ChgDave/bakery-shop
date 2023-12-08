@@ -1,12 +1,12 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { MatterContext } from "../context/MatterContext";
 import { Button } from "antd";
 import priceConversion from "../../util/helpers";
-import { CloseOutlined } from "@ant-design/icons";
 
 export default function Cart() {
-  const { cartItems, setCartItems } = useContext(MatterContext);
+  let { cartItems, setCartItems } = useContext(MatterContext);
 
+  console.log(cartItems);
   const removeFromCart = (id) => {
     console.log(id);
     // turn the cartItems into key pair array

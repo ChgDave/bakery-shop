@@ -1,13 +1,15 @@
 import Welcome from "./Welcome";
 import BakeryList from "./Bakerylist";
 import FavoriteItems from "./FavoriteItems";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useContext } from "react";
 import { MatterContext } from "../context/MatterContext";
+import useLocalStorage from "../hooks/localStorage";
 
 export default function Landingpge() {
   const [favorites, setFavorites] = useState([]);
   const { cartItems, setCartItems } = useContext(MatterContext);
+  const [cartLocal, setCartLocal] = useLocalStorage("Cart Items", "");
 
   const addToFavorite = (item) => {
     if (!favorites.includes(item)) {
@@ -26,8 +28,12 @@ export default function Landingpge() {
   const addToCart = (item) => {
     const newCartItems = [...cartItems, item];
     setCartItems(newCartItems);
+    setCartLocal(newCartItems);
   };
 
+  useEffect(() => {
+    setCartItems(cartLocal);
+  });
   return (
     <>
       <Welcome />
