@@ -2,9 +2,11 @@ import { useContext, useEffect } from "react";
 import { MatterContext } from "../context/MatterContext";
 import { Button } from "antd";
 import priceConversion from "../../util/helpers";
+import useLocalStorage from "../hooks/localStorage";
 
 export default function Cart() {
   let { cartItems, setCartItems } = useContext(MatterContext);
+  const [cartLocal, setCartLocal] = useLocalStorage("Cart Items", "");
 
   console.log(cartItems);
   const removeFromCart = (id) => {
@@ -19,6 +21,7 @@ export default function Cart() {
     cartItems.splice(index, 1);
     const newCartItems = [...cartItems];
     setCartItems(newCartItems);
+    setCartLocal(newCartItems);
   };
 
   const cartCollection = {};
