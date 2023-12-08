@@ -37,8 +37,8 @@ export default function Cart() {
 
   const list = cartCollectionArray?.map((item, index) => {
     return (
-      <li key={index}>
-        Item {item[0]} <CloseOutlined /> {item[1]}
+      <li className="shopping-list-item" key={index}>
+        Item {item[0]}, Qty: {item[1]}
         <Button
           className="button"
           type="primary"
@@ -53,8 +53,9 @@ export default function Cart() {
   });
 
   return (
-    <div>
-      Shopping Cart <ul>{list}</ul>
+    <div className="shopping-cart">
+      <h3 className="bottom-line">Shopping Cart Summary</h3>{" "}
+      <ul className="shopping-list bottom-line">{list}</ul>
       <div>
         Total {priceConversion(totalPrice)}{" "}
         <Button
