@@ -1,10 +1,16 @@
 import { productData } from "../../util/data";
 import BakeryItem from "./Bakeryitem";
-import "../App.css";
 
-function BakeryList({ addToFav }) {
+function BakeryList({ addToFav, addToCart }) {
   const list = productData.map((bakery) => {
-    return <BakeryItem key={bakery.id} data={bakery} addToFav={addToFav} />;
+    return (
+      <BakeryItem
+        key={bakery.id}
+        data={bakery}
+        addToFav={addToFav}
+        addToCart={addToCart}
+      />
+    );
   });
 
   return <div className="container">{list}</div>;

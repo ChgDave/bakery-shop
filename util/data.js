@@ -1,7 +1,7 @@
 export const productData = [
   {
     id: 1,
-    name: "rapsberry petit four",
+    name: "raspberry petit four",
     cost: 199,
     calories: 131,
     img: "https://images-gmi-pmc.edge-generalmills.com/5a0d7c12-022f-4f05-9b80-4e9b28dc7029.jpg",
