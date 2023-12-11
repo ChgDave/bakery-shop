@@ -68,7 +68,7 @@ export default function Cart() {
             console.log("Chcekc out!");
           }}
         >
-          Chcekout
+          Checkout
         </Button>
       </div>
     </div>
