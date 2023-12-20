@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { useContext } from "react";
 import { MatterContext } from "../context/MatterContext";
 import useLocalStorage from "../hooks/localStorage";
+import Auth from "../utils/auth";
 
 export default function Landingpge() {
   const [favorites, setFavorites] = useState([]);
@@ -38,7 +39,7 @@ export default function Landingpge() {
     <>
       <Welcome />
       <BakeryList addToFav={addToFavorite} addToCart={addToCart} />
-      <FavoriteItems data={favorites} />
+      <div>{Auth.loggedIn() ? <FavoriteItems data={favorites} /> : null}</div>
     </>
   );
 }

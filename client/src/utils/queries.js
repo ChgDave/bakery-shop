@@ -1,31 +1,23 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const QUERY_PROFILES = gql`
   query allProfiles {
     profiles {
       _id
       name
-      skills
+      favorites
     }
   }
 `;
 
-export const QUERY_SINGLE_PROFILE = gql`
-  query singleProfile($profileId: ID!) {
-    profile(profileId: $profileId) {
+export const QUERY_BAKERYITEMS = gql`
+  query allBakeryItems {
+    bakeryItems {
       _id
       name
-      skills
-    }
-  }
-`;
-
-export const QUERY_ME = gql`
-  query me {
-    me {
-      _id
-      name
-      skills
+      cost
+      calories
+      img
     }
   }
 `;

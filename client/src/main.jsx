@@ -8,6 +8,7 @@ import Landingpge from "./components/Landingpge.jsx";
 import Storeinfo from "./components/Storeinfo.jsx";
 import SingleBakeryitem from "./components/SingleBakeryitem.jsx";
 import Signup from "./components/Signup.jsx";
+import Login from "./components/Login.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <Signup />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
     ],
   },
