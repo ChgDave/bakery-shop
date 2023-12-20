@@ -1,7 +1,7 @@
 import { useContext, useEffect } from "react";
 import { MatterContext } from "../context/MatterContext";
 import { Button } from "antd";
-import priceConversion from "../../util/helpers";
+import priceConversion from "../utils/helpers";
 import useLocalStorage from "../hooks/localStorage";
 
 export default function Cart() {

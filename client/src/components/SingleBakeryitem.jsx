@@ -1,5 +1,5 @@
-import priceConversion from "../../util/helpers";
-import { productData } from "../../util/data";
+import priceConversion from "../utils/helpers";
+import { productData } from "../utils/data";
 import { SmileOutlined } from "@ant-design/icons";
 import { useParams, Link } from "react-router-dom";
 

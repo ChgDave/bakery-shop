@@ -7,6 +7,7 @@ import Cart from "./components/Cart.jsx";
 import Landingpge from "./components/Landingpge.jsx";
 import Storeinfo from "./components/Storeinfo.jsx";
 import SingleBakeryitem from "./components/SingleBakeryitem.jsx";
+import Signup from "./components/Signup.jsx";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "bakery-item/:id",
         element: <SingleBakeryitem />,
+      },
+      {
+        path: "/signup",
+        element: <Signup />,
       },
     ],
   },

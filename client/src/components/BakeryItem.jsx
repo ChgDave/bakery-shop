@@ -1,4 +1,4 @@
-import priceConversion from "../../util/helpers";
+import priceConversion from "../utils/helpers";
 import { useState } from "react";
 import { Button } from "antd";
 import { Link } from "react-router-dom";

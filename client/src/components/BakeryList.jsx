@@ -1,4 +1,4 @@
-import { productData } from "../../util/data";
+import { productData } from "../utils/data";
 import BakeryItem from "./Bakeryitem";
 
 function BakeryList({ addToFav, addToCart }) {

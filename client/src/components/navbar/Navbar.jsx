@@ -27,6 +27,9 @@ export default function Navbar() {
       <Link className="nav-item" to="/store-info">
         Store Info
       </Link>
+      <Link className="nav-item" to="/signup">
+        Signup
+      </Link>
     </nav>
   );
 }
