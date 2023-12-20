@@ -21,3 +21,15 @@ export const QUERY_BAKERYITEMS = gql`
     }
   }
 `;
+
+export const QUERY_ONE_BAKERYITEM = gql`
+  query oneBakeryItem($bakeryItemId: ID!) {
+    bakeryItem(bakeryItemId: $bakeryItemId) {
+      _id
+      name
+      cost
+      calories
+      img
+    }
+  }
+`;

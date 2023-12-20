@@ -23,6 +23,7 @@ const typeDefs = `
   type Query {
     profiles: [Profile]!
     bakeryItems:[BakeryItem]!
+    bakeryItem(bakeryItemId: ID!): BakeryItem
   }
 
   type Mutation {

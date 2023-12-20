@@ -18,7 +18,6 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div>
-        {" "}
         <Link className="nav-item" to="/">
           Home
         </Link>
@@ -35,7 +34,6 @@ export default function Navbar() {
         </Link>
       </div>
       <div>
-        {" "}
         <Link className="nav-item" to="/store-info">
           Store Info
         </Link>

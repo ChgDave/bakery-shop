@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Button } from "antd";
 import { Link } from "react-router-dom";
 import { DownloadOutlined } from "@ant-design/icons";
+import Auth from "../utils/auth";
 
 function BakeryItem({ data, addToFav, addToCart }) {
   const [buttonText, setButtonText] = useState("Add to Favorites");
@@ -23,7 +24,6 @@ function BakeryItem({ data, addToFav, addToCart }) {
 
   const handleCartClick = () => {
     addToCart(data);
-    setCartLocal();
   };
 
   const backgroundColor =
@@ -32,21 +32,26 @@ function BakeryItem({ data, addToFav, addToCart }) {
   return (
     <div className="card" style={backgroundColor}>
       <img src={data.img}></img>
-      <Link to={`/bakery-item/${data.id}`}>
+      <Link to={`/bakery-item/${data._id}`}>
         <h4>{data.name}</h4>
       </Link>
 
       <p>{priceConversion(data.cost)}</p>
-      <Button
-        className="button"
-        type="primary"
-        onClick={() =>
-          // write a handle click function
-          handleFavClick()
-        }
-      >
-        {buttonText}
-      </Button>
+      <div>
+        {Auth.loggedIn() ? (
+          <Button
+            className="button"
+            type="primary"
+            onClick={() =>
+              // write a handle click function
+              handleFavClick()
+            }
+          >
+            {buttonText}
+          </Button>
+        ) : null}
+      </div>
+
       <Button
         className="button"
         type="primary"

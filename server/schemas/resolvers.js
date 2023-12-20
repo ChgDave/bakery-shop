@@ -13,18 +13,19 @@ const resolvers = {
       return BakeryItem.find();
     },
 
-    // profile: async (parent, { profileId }) => {
-    //   return Profile.findOne({ _id: profileId });
-    // },
-    // By adding context to our query, we can retrieve the logged in user without specifically searching for them
-    // me: async (parent, args, context) => {
-    //   if (context.user) {
-    //     return Profile.findOne({ _id: context.user._id });
-    //   }
-    //   throw AuthenticationError;
+    bakeryItem: async (parent, { bakeryItemId }) => {
+      console.log("Getting one bakery item");
+      return BakeryItem.findOne({ _id: bakeryItemId });
+    },
+    //   By adding context to our query, we can retrieve the logged in user without specifically searching for them
+    //   me: async (parent, args, context) => {
+    //     if (context.user) {
+    //       return Profile.findOne({ _id: context.user._id });
+    //     }
+    //     throw AuthenticationError;
+    //   },
     // },
   },
-
   Mutation: {
     addProfile: async (parent, { name, email, password }) => {
       console.log("Creating profile");
